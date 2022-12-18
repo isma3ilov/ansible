@@ -1,0 +1,31 @@
+---
+- name: install and enable webserver
+  hosts: dbs
+  tasks:
+      - name: install httpd and firewalld
+        yum:
+          name: 
+            - httpd
+            - firewalld
+          state: present
+
+
+      - name: starting httpd 
+        service:
+          name: httpd
+          state: started   
+          enabled: yes
+
+      - name:  starting firewalld
+        service:
+          name: firewalld
+          state: started
+          enabled: yes   
+          
+          
+          
+
+
+
+   
+      
